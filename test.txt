@@ -16,3 +16,14 @@ pip install python-dotenv openai pydantic numpy rank_bm25 chromadb qdrant-client
 8) ollama list
 9) ollama serve
 10) python -m streamlit run app.py
+
+
+---------------VALIDATE API-------------------
+
+from openai import OpenAI
+client = OpenAI()
+try:
+    client.models.list()
+    print("Key is valid")
+except Exception as e:
+    print("Key failed:", e)
